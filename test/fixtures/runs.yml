@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  distance: 9.99
+  date: 2016-02-29 23:06:42
+  partners: 1
+  time: 1
+  speed: 9.99
+
+two:
+  distance: 9.99
+  date: 2016-02-29 23:06:42
+  partners: 1
+  time: 1
+  speed: 9.99
