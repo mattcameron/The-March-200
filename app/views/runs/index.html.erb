@@ -2,6 +2,8 @@
 
 <h1>Listing Runs</h1>
 
+<button class="show-btn">Show</button>
+
 <table>
   <thead>
     <tr>
@@ -16,7 +18,7 @@
 
   <tbody>
     <% @runs.each do |run| %>
-      <tr>
+      <tr class="run">
         <td><%= run.distance %></td>
         <td><%= run.date %></td>
         <td><%= run.partners %></td>
@@ -27,6 +29,9 @@
         <td><%= link_to 'Destroy', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <tr class="bold">
+      <td></td>
+    </tr>
   </tbody>
 </table>
 
