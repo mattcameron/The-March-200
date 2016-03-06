@@ -69,6 +69,6 @@ class RunsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def run_params
-      params.require(:run).permit(:distance, :date, :partners, :time, :speed)
+      params.require(:run).permit(:distance, :date, :time, :speed)
     end
 end

@@ -23,7 +23,6 @@
         <tr class="run">
           <td><%= "%.2f" % run.distance.truncate(2) %> km</td>
           <td><%= run.date.to_s(:long_ordinal) %></td>
-          <td><%= run.partners %></td>
           <td><%= run.time %></td>
           <td><%= minutes_per_km(run.speed) %></td>
           <td><%= link_to 'Show', run %></td>

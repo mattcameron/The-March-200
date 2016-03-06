@@ -20,16 +20,8 @@
     <%= f.datetime_select :date %>
   </div>
   <div class="field">
-    <%= f.label :partners %><br>
-    <%= f.number_field :partners %>
-  </div>
-  <div class="field">
     <%= f.label :time %><br>
-    <%= f.number_field :time %>
-  </div>
-  <div class="field">
-    <%= f.label :speed %><br>
-    <%= f.text_field :speed %>
+    <%= f.number_field :time, include_seconds: true %>
   </div>
   <div class="actions">
     <%= f.submit %>
