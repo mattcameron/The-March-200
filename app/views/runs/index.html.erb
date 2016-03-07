@@ -9,9 +9,8 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Distance</th>
         <th>Date</th>
-        <th>Partners</th>
+        <th>Distance</th>
         <th>Time</th>
         <th>Speed</th>
         <th colspan="3"></th>
@@ -21,9 +20,9 @@
     <tbody>
       <% @runs.each do |run| %>
         <tr class="run">
-          <td><%= "%.2f" % run.distance.truncate(2) %> km</td>
           <td><%= run.date.to_s(:long_ordinal) %></td>
-          <td><%= run.time %></td>
+          <td><%= "%.2f" % run.distance.truncate(2) %> km</td>
+          <td><%= human_time(run.time) %></td>
           <td><%= minutes_per_km(run.speed) %></td>
           <td><%= link_to 'Show', run %></td>
           <td><%= link_to 'Edit', edit_run_path(run) %></td>
@@ -33,8 +32,11 @@
       <tr class="totals">
         <td><%= run_total("distance") %> km</td>
         <td></td>
+        <td><%= human_time(run_total("time")) %></td>
+        <td>Avg: <%= average_speed %></td>
         <td></td>
-        <td><%= run_total("time") %></td>
+        <td></td>
+        <td></td>
       </tr>
     </tbody>
   </table>

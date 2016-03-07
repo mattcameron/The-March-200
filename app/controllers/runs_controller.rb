@@ -69,6 +69,16 @@ class RunsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def run_params
-      params.require(:run).permit(:distance, :date, :time, :speed)
+
+      time = convert_time_to_seconds(params[:temp_time]["time(4i)"], params[:temp_time]["time(5i)"], params[:temp_time]["time(6i)"])
+
+      edited_params = params
+      edited_params[:run][:time] = time
+
+      edited_params.require(:run).permit(:distance, :date, :time, :speed)
+    end
+
+    def convert_time_to_seconds(hours, minutes, seconds)
+      time = (hours.to_i.hours + minutes.to_i.minutes + seconds.to_i.seconds).to_i
     end
 end

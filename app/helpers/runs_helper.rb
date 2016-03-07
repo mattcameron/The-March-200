@@ -8,6 +8,18 @@ module RunsHelper
     seconds = (speed % 60).floor
     minutes = ((speed / 60) % 60).floor
 
-    "#{minutes}:#{seconds} per km"
+    "#{minutes}:#{seconds} mins/km"
+  end
+
+  def human_time(seconds)
+    Time.at(seconds).utc.strftime("%k:%M:%S")
+  end
+
+  def average_speed
+    time = Run.sum(:time)
+    distance = Run.sum(:distance)
+    speed = time / distance
+
+    minutes_per_km(speed)
   end
 end

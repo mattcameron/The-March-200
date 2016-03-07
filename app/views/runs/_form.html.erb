@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :time %><br>
-    <%= f.number_field :time, include_seconds: true %>
+    <%= time_select :temp_time, :time, include_seconds: true %>
   </div>
   <div class="actions">
     <%= f.submit %>
