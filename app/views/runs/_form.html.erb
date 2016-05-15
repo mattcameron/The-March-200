@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :time %><br>
-    <%= time_select :temp_time, :time, include_seconds: true %>
+    <%= time_select :temp_time, :time, include_seconds: true, default: {hour: 0, minute: 30, second: 0} %>
   </div>
   <div class="actions">
     <%= f.submit %>
