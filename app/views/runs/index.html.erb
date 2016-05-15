@@ -4,7 +4,8 @@
 
   <h1>Listing Runs</h1>
 
-  <button class="show-btn">Show</button>
+  <button class="show-btn pull-right btn btn-secondary">Show / Hide</button>
+  <%= link_to 'New Run', new_run_path, class: 'btn btn-primary' %>
 
   <table class="table table-striped">
     <thead>
@@ -40,8 +41,5 @@
       </tr>
     </tbody>
   </table>
-
-  <br>
-  <%= link_to 'New Run', new_run_path %>
 
 </div>

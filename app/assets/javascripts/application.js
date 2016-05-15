@@ -15,5 +15,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require runs
+//= require floatlabels
 
 //= require turbolinks

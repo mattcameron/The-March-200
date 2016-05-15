@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :distance %><br>
-    <%= f.text_field :distance %>
+    <%= f.text_field :distance, placeholder: 'Distance', data: {label: 'Distance'}, class: 'floatlabel' %>
   </div>
   <div class="field">
     <%= f.label :date %><br>
@@ -24,6 +23,6 @@
     <%= time_select :temp_time, :time, include_seconds: true, default: {hour: 0, minute: 30, second: 0} %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

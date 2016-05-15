@@ -17,9 +17,11 @@ $(document).ready(function() {
 
     shown = !shown;
   });
+
+
+  // Floating form labels
+  $('.floatlabel').floatlabel({
+    // type: 'outside'
+  });
 });
 
-
-function showOrHide(selector, speed) {
-  
-}
