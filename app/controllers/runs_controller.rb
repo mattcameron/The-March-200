@@ -1,10 +1,11 @@
 class RunsController < ApplicationController
   before_action :set_run, only: [:show, :edit, :update, :destroy]
+  helper_method :sort_direction, :sort_column
 
   # GET /runs
   # GET /runs.json
   def index
-    @runs = Run.all
+    @runs = Run.all.order(sort_column + ' ' + sort_direction)
   end
 
   # GET /runs/1
@@ -80,5 +81,15 @@ class RunsController < ApplicationController
 
     def convert_time_to_seconds(hours, minutes, seconds)
       time = (hours.to_i.hours + minutes.to_i.minutes + seconds.to_i.seconds).to_i
+    end
+
+    private
+
+    def sort_direction
+      ['asc', 'desc'].include?(params[:direction]) ? params[:direction] : 'desc'
+    end
+
+    def sort_column
+      params[:sort] || 'date'
     end
 end

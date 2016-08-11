@@ -30,5 +30,10 @@ module RunsHelper
     x.to_s.length == 1 ? "0"+x.to_s : x.to_s
   end
 
+  def sortable(column_name)
+    direction = column_name == sort_column && sort_direction == 'asc' ? 'desc' : 'asc'
+    link_to column_name.titleize, sort: column_name, direction: direction
+  end
+
 end
 
